@@ -30,9 +30,9 @@ bedtools v2.30.0
 Python 3.12.4
 
 **Sample Bed File**  
-FCA126	0	14424	gene_body  
-FCA126	14424	42021	igs  
-FCA126	42021	42221	promoter  
-Oge1	0	14676	gene_body  
-Oge1	14676	37625	igs  
-Oge1	37625	37825	promoter  
+FCA126    0    14424    gene_body  
+FCA126    14424    42021    igs  
+FCA126    42021    42221    promoter  
+Oge1    0    14676    gene_body  
+Oge1    14676    37625    igs  
+Oge1    37625    37825    promoter  
