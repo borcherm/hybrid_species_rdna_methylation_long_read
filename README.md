@@ -6,7 +6,7 @@ This bash pipeline was created for tabulating per-read and per-base methylation 
 *Step 1*  
 bash pipeline_hybrid_alignments_step1.sh sequencing_data/slice1/ hybrid_reference_singleline.fa results_batch1 hybrid_features.bed  
 
-Step 1 is called with bash. The first argument is the **directory** containing the reads of split 1, not the file itself. The second argument is the hybrid singleline fasta with a separate entry for each parental species. The third argument is the annotation of regions within the feature. All arguments are required and must be provided in order.  
+Step 1 is called with bash. The first argument is the **directory** containing the reads of split 1, not the file itself. The second argument is the hybrid singleline fasta with a separate entry for each parental species. The thrid argument is the name of the output directory, which must be of the form results_batchN. If the input file is split 4 times, step 1 will be run 4 times with a different value for N and different input reads each time. The fourth argument is the annotation of regions within the feature. All arguments are required and must be provided in order.  
 
 *Step 2*  
 bash pipeline_hybrid_alignments_step2.sh hybrid_reference_singleline.fa  
