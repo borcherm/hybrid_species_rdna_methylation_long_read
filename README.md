@@ -9,9 +9,9 @@ bash pipeline_hybrid_alignments_step1.sh sequencing_data/slice1/ hybrid_referenc
 Step 1 is called with bash. The first argument is the **directory** containing the reads of split 1, not the file itself. The second argument is the hybrid singleline fasta with a separate entry for each parental species. The thrid argument is the name of the output directory, which must be of the form results_batchN. If the input file is split 4 times, step 1 will be run 4 times with a different value for N and different input reads each time. The fourth argument is the annotation of regions within the feature. All arguments are required and must be provided in order.  
 
 *Step 2*  
-bash pipeline_hybrid_alignments_step2.sh hybrid_reference_singleline.fa  
+bash pipeline_hybrid_alignments_step2.sh hybrid_reference_singleline.fa hybrid_features.bed  
 
-The only argument in step2 is the hybrid reference fasta.  
+The only arguments for step2 are the hybrid reference fasta and the annotation of regions in the fasta.  
 
 **Input Files**  
   -The pipeline operates on long read fastq files that must have methylation tags (MM, ML) in the header of each read. The basecalling must therefore be done with a methylation aware config, and the tags added to the header by samtools fastq -T '*' unaligned_bam.bam or samtools fastq -T 'MM,ML' unaligned_bam.bam. The fastq file may be split as many times as necessary (recommended to not exceed 120 GB per input file).  
