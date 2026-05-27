@@ -25,9 +25,9 @@ The output files will be stored in results_all/methylation_analysis/. Separate o
 samtools 1.23.1  
 htslib 1.23.1  
 minimap2 2.26-r1175  
-modkit 0.6.0
-bedtools v2.30.0
-Python 3.12.4
+modkit 0.6.0  
+bedtools v2.30.0  
+Python 3.12.4  
 
 **Sample Bed File**  
 FCA126    0    14424    gene_body  
