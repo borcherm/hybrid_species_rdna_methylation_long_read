@@ -24,5 +24,3 @@ bash $BASE_DIR/get_methylation_hybrids.sh $BASE_DIR/$ref
 cd ../methylation_analysis
 
 bash $BASE_DIR/get_read_summary_hybrids_from_bed_v3.sh $BASE_DIR/$ref $BASE_DIR/$annotation
-
-python $BASE_DIR/violin_plot.py read_summary.txt $prefix
