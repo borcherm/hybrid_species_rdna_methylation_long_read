@@ -1,6 +1,5 @@
 #The fasta reference containing one entry for the feature from each hybrid, supplied as the first argument in the bash invocation
 ref=$1
-annotation=$2
 
 #make a results directory that combines the runs from slices of the file
 mkdir results_all
@@ -9,19 +8,13 @@ mkdir results_all
 rsync -av -f"+ */" -f"- *" "results_batch1/" "./results_all/"
 ls ./ | grep results_batch | while read slice
 do
-	cd results_all/get_methylation/alignment/
-	ls | while read sample
-	do
-		cd $sample/modkit_beds/
-		ln -s ../../../../../$slice/get_methylation/alignment/*/modkit_beds/*bed ./
-		cd ../../
-	done
-cd ../../../
+	cd results_all/get_methylation/alignment/*/modkit_beds/
+	ln -s ../../../../../$slice/get_methylation/alignment/*/modkit_beds/*bed ./
+	cd ../../../../../
 done
-
 cd results_all/methylation_analysis/
-cp ../../get_read_summary_hybrids_from_bed_v3.sh .
-bash get_read_summary_hybrids_from_bed_v3.sh ../../$ref ../../$annotation
+cp ../../get_read_summary_hybrids_from_bed_v4.sh .
+bash get_read_summary_hybrids_from_bed_v4.sh $ref
 cd ../../
 
 #copy the full filtered bam files from each sub-run and do a modkit per-base methylation tabulation
